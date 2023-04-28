@@ -1,0 +1,18 @@
+name: Clear
+
+on:
+  workflow_dispatch:
+
+jobs:
+  clear:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: clear members.txt
+        run: |
+          echo "hello clear"
+  call-update:
+    needs: [clear]
+    uses: ./.github/workflows/update.yml
