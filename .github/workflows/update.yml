@@ -1,0 +1,15 @@
+name: Update
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - run: |
+          echo "update"
